@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Headphone</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f7c08a, #f79256), url('bg.png');
+            background-blend-mode: overlay;
+            background-size: cover;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            width: 90%;
+            max-width: 1200px;
+            position: relative;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1), 0 4px 15px rgba(0, 0, 0, 0.15);
+            height: 80vh;
+        }
+
+        .left {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        canvas {
+            border: 3px solid rgb(61, 55, 55);
+            border-radius: 10px;
+            background: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .right {
+            flex: 1;
+            padding: 20px;
+            background: #fefefe;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100%;
+        }
+
+        .right h1 {
+            margin: 0;
+            font-size: 2rem;
+            color: #333333;
+            font-weight: 600;
+        }
+
+        .right h2 {
+            margin: 10px 0;
+            font-size: 1.2rem;
+            color: #555555;
+            font-weight: 400;
+        }
+
+        .right h2:last-child {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body onload="main()">
+    <div class="container">
+        <div class="left">
+            <canvas id="canvas" width="640" height="480"></canvas>
+        </div>
+        <div class="right">
+            <h1>Nayla Arina</h1>
+            <h2>5025221029</h2>
+            <h2>Grafika Komputer D</h2>
+            <h2>Headphone</h2>
+        </div>
+    </div>
+
+    <!-- Local Scripts -->
+    <script type="text/javascript" src="src/parser.js"></script>
+    <script type="text/javascript" src="src/texture.js"></script>
+    <script type="text/javascript" src="src/m3.js"></script>
+    <script type="text/javascript" src="src/m4.js"></script>
+    <script type="text/javascript" src="src/webgl-utils.js"></script>
+    <script type="text/javascript" src="src/shader.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
