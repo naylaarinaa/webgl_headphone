@@ -24,7 +24,6 @@ async function main() {
 
   const textures = {
     logo: await createTexture(gl, "../data/logo.png"),
-    cushrough: await createTexture(gl, "../data/cushrough.jpg"),
     cushnormal: await createTexture(gl, "../data/cushnormal.jpg"),
     speaker: await createTexture(gl, "../data/speaker.png"),
     defaultWhite: create1PixelTexture(gl, [255, 255, 255, 255]),
