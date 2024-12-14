@@ -7,6 +7,9 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+
     <!-- Styles -->
     <style>
         body {
@@ -16,7 +19,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: linear-gradient(135deg, #f7c08a, #f79256), url('bg.png');
+            background: linear-gradient(135deg, #f7c08a, #f79256), url("data/bg.png");
             background-blend-mode: overlay;
             background-size: cover;
         }
@@ -41,6 +44,41 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
+            flex-direction: column;
+        }
+
+        .canvas-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .zoom-buttons {
+            position: absolute;
+            left: 0px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .zoom-buttons button {
+            padding: 10px;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 50%;
+            background: #f7c08a;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .zoom-buttons button:hover {
+            background: #f79256;
         }
 
         canvas {
@@ -48,6 +86,16 @@
             border-radius: 10px;
             background: #ffffff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 15px rgba(0, 0, 0, 0.1);
+            margin-left: 60px; /* Geser sedikit ke kanan */
+        }
+
+        .canvas-description {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #555;
+            font-style: italic;
+            font-weight: bold;
+            text-align: center;
         }
 
         .right {
@@ -84,7 +132,28 @@
 <body onload="main()">
     <div class="container">
         <div class="left">
-            <canvas id="canvas" width="640" height="480"></canvas>
+            <div class="canvas-container">
+                <!-- Zoom Buttons -->
+                <div class="zoom-buttons">
+                    <button id="zoomIn" title="Zoom In">
+                        <i class="bi bi-zoom-in"></i>
+                    </button>
+                    <button id="zoomOut" title="Zoom Out">
+                        <i class="bi bi-zoom-out"></i>
+                    </button>
+                    <!-- Animation Button -->
+                    <button id="toggleAnimation" title="Pause Animation">
+                        <i class="bi bi-pause-fill"></i>
+                    </button>
+                    <!-- Reset Button -->
+                    <button id="reset" title="Reset">
+                        <i class="bi bi-arrow-clockwise"></i>
+                    </button>
+                </div>
+
+                <canvas id="canvas" width="640" height="480"></canvas>
+            </div>
+            <p class="canvas-description">*drag to rotate</p>
         </div>
         <div class="right">
             <h1>Nayla Arina</h1>
@@ -95,12 +164,12 @@
     </div>
 
     <!-- Local Scripts -->
-    <script type="text/javascript" src="src/parser.js"></script>
-    <script type="text/javascript" src="src/texture.js"></script>
-    <script type="text/javascript" src="src/m3.js"></script>
-    <script type="text/javascript" src="src/m4.js"></script>
-    <script type="text/javascript" src="src/webgl-utils.js"></script>
-    <script type="text/javascript" src="src/shader.js"></script>
-    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="js-src/parser.js"></script>
+    <script type="text/javascript" src="js-src/texture.js"></script>
+    <script type="text/javascript" src="js-src/m3.js"></script>
+    <script type="text/javascript" src="js-src/m4.js"></script>
+    <script type="text/javascript" src="js-src/webgl-utils.js"></script>
+    <script type="text/javascript" src="js-src/shader.js"></script>
+    <script type="text/javascript" src="js-src/main.js"></script>
 </body>
 </html>
