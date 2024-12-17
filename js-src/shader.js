@@ -65,15 +65,15 @@ const vs = `
     float fakeLight = dot(u_lightDirection, normal) * .5 + .5;
     float specularLight = clamp(dot(normal, halfVector), 0.0, 1.0);
     vec4 specularMapColor = texture2D(specularMap, v_texcoord);
-    vec3 effectiveSpecular = specular * specularMapColor.rgb;
+    vec3 effectiveSpecular = specular * specularMapColor.rgb * 1.2;
 
     vec4 diffuseMapColor = texture2D(diffuseMap, v_texcoord);
-    vec3 effectiveDiffuse = diffuse * diffuseMapColor.rgb * v_color.rgb;
+    vec3 effectiveDiffuse = diffuse * diffuseMapColor.rgb * v_color.rgb * 1.02;
     float effectiveOpacity = opacity * diffuseMapColor.a * v_color.a;
 
     gl_FragColor = vec4(
         emissive +
-        ambient * u_ambientLight +
+        ambient * u_ambientLight * 1.1 +
         effectiveDiffuse * fakeLight +
         effectiveSpecular * pow(specularLight, shininess),
         effectiveOpacity);
