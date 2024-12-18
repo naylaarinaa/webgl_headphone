@@ -49,6 +49,7 @@
         }
 
         .canvas-container {
+            top: 10px;
             position: relative;
             display: flex;
             align-items: center;
@@ -90,11 +91,18 @@
         }
 
         .canvas-description {
-            margin-top: 10px;
+            margin-top: 20px;
             font-size: 0.9rem;
             color: #555;
             font-style: italic;
             font-weight: bold;
+            text-align: center;
+        }
+        .load {
+            margin-top: -10px;
+            font-size: 0.8rem;
+            color: #555;
+            font-style: italic;
             text-align: center;
         }
 
@@ -151,9 +159,10 @@
                     </button>
                 </div>
 
-                <canvas id="canvas" width="670" height="510"></canvas>
+                <canvas id="canvas" width="700" height="530"></canvas>
             </div>
             <p class="canvas-description">*drag to rotate</p>
+            <p class="load">loading sedikit memakan waktu, mohon ditunggu</p>
         </div>
         <div class="right">
             <h1>Nayla Arina</h1>
